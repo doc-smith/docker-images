@@ -9,8 +9,8 @@ RUN apt-get update && apt-get -y install \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip && \
-    pip3 install \
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir \
         ciphey==5.10.0 \
         pycryptodome==3.9.9 \
         jupyter==1.0.0
