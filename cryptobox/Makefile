@@ -1,12 +1,10 @@
 NAME		:= drsmith/cryptobox
-TAG			:= $$(git log -1 --pretty=%H)
+TAG			:= latest
 IMG			:= ${NAME}:${TAG}
-LATEST		:= ${NAME}:latest
 DOCKER_USER	:= drsmith
 
 build:
 	@docker build -t ${IMG} .
-	@docker tag ${IMG} ${LATEST}
 
 push:
 	@docker push ${NAME}
